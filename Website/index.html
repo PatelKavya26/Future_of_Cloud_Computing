@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMission 2025: The Future of Cloud Computing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple spinner animation */
+        .loader {
+            border-top-color: #3B82F6;
+            -webkit-animation: spinner 1.5s linear infinite;
+            animation: spinner 1.5s linear infinite;
+        }
+        @-webkit-keyframes spinner {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+        @keyframes spinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 p-4 md:p-8">
+
+    <!-- 
+        Chosen Palette: Brilliant Blues
+        ... (Existing comments preserved) ...
+        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+
+    <div class="max-w-7xl mx-auto">
+        
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">TechMission 2025: The Future of Cloud Computing</h1>
+            <p class="text-lg text-slate-600">Presented by: Kavya Patel, Shlok Patel, & Mehzabeen Pathan</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- ... EXISTING SECTIONS (unchanged) ... -->
+            <section class="lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">The Cloud Today: A Growing Foundation</h2>
+                <p class="mb-4 text-slate-600">Before looking to the future, it's essential to understand the cloud's massive scale today. It's the engine of modern digital life, and its growth is accelerating, providing the foundation for all future innovations.</p>
+                <h3 class="text-xl font-semibold mb-2">Global Cloud Market Growth (USD Billions)</h3>
+                <div class="w-full max-w-2xl mx-auto h-80 md:h-96 max-h-96 relative">
+                    <canvas id="marketGrowthChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-slate-500 text-center">The global cloud market is projected to more than double by 2028, creating massive opportunities.</p>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Service Model Adoption</h2>
+                <p class="mb-4 text-slate-600">The market is split into three main models. Software-as-a-Service (SaaS) currently dominates, but Platform-as-a-Service (PaaS) is the fastest-growing segment.</p>
+                <div class="w-full max-w-2xl mx-auto h-80 md:h-96 max-h-96 relative">
+                    <canvas id="serviceModelChart"></canvas>
+                </div>
+            </section>
+
+            <section class="lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Key Trend: Serverless Computing</h2>
+                <p class="mb-4 text-slate-600">Serverless is the "no-server" revolution. It doesn't mean no servers exist; it means developers no longer need to manage, provision, or scale them. The cloud provider handles all infrastructure, allowing teams to focus purely on code and pay only for what they use.</p>
+                <h3 class="text-xl font-semibold mb-2">Serverless Market Growth (USD Billions)</h3>
+                <div class="w-full max-w-2xl mx-auto h-64 md:h-80 max-h-80 relative">
+                    <canvas id="serverlessGrowthChart"></canvas>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">How Serverless (FaaS) Works</h2>
+                <p class="mb-4 text-slate-600">It's an event-driven model. A trigger, like an API call, runs a specific function.</p>
+                <div class="flex flex-col space-y-2 mt-6">
+                    <div class="bg-blue-100 border border-blue-400 text-blue-800 rounded-lg p-3 text-center shadow-sm">
+                        <span class="font-semibold">Event Trigger</span> (e.g., User uploads image)
+                    </div>
+                    <div class="text-blue-500 text-2xl font-bold text-center">↓</div>
+                    <div class="bg-blue-100 border border-blue-400 text-blue-800 rounded-lg p-3 text-center shadow-sm">
+                        <span class="font-semibold">API Gateway</span> (Manages the request)
+                    </div>
+                    <div class="text-blue-500 text-2xl font-bold text-center">↓</div>
+                    <div class="bg-blue-100 border border-blue-400 text-blue-800 rounded-lg p-3 text-center shadow-sm">
+                        <span class="font-semibold">Cloud Function</span> (e.g., 'resizeImage()')
+                    </div>
+                    <div class="text-blue-500 text-2xl font-bold text-center">↓</div>
+                    <div class="bg-blue-100 border border-blue-400 text-blue-800 rounded-lg p-3 text-center shadow-sm">
+                        <span class="font-semibold">Backend Service</span> (e.g., Save to Storage)
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Key Trend: Edge Computing</h2>
+                <p class="mb-4 text-slate-600">Edge computing brings computation closer to the data source. For applications like self-driving cars or factory robots, sending data to a distant cloud is too slow. Edge provides the near-instant response needed.</p>
+                <h3 class="text-xl font-semibold mb-2">The Speed Difference: Edge vs. Cloud</h3>
+                <div class="w-full max-w-2xl mx-auto h-64 md:h-80 max-h-80 relative">
+                    <canvas id="latencyChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-slate-500 text-center">Lower latency (delay) is the key advantage of Edge, critical for real-time applications.</p>
+            </section>
+
+            <section class="lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Key Trend: The AI-Powered Cloud</h2>
+                <p class="mb-4 text-slate-600">AI and Cloud are inseparable. The cloud provides the immense data and processing power AI needs (AI-as-a-Service), while AI is used to make the cloud smarter, more secure, and more efficient (AIOps). This symbiotic relationship is driving the next wave of innovation.</p>
+                <h3 class="text-xl font-semibold mb-2">AI in Cloud Market Growth (USD Billions)</h3>
+                <div class="w-full max-w-2xl mx-auto h-64 md:h-80 max-h-80 relative">
+                    <canvas id="aiMarketChart"></canvas>
+                </div>
+                <p class="mt-4 text-slate-600">This trend isn't just about using AI; it's about building intelligence directly into the cloud fabric, enabling automated security, predictive scaling, and new intelligent applications.</p>
+            </section>
+
+            <section class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h2 class="text-3xl font-bold text-blue-600 mb-4">The Multi-Cloud Reality</h2>
+                    <p class="mb-4 text-slate-600">Companies no longer choose just one cloud. They adopt a "multi-cloud" strategy to use the best services from different providers (like AWS, Azure, and GCP) and avoid vendor lock-in.</p>
+                    <div class="text-8xl font-bold text-blue-600 my-4">94%</div>
+                    <p class="text-slate-600 font-semibold">of enterprises use a multi-cloud strategy.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h2 class="text-3xl font-bold text-teal-500 mb-4">The Green Cloud Imperative</h2>
+                    <p class="mb-4 text-slate-600">Data centers are energy-intensive. The "Green Cloud" movement focuses on sustainability by using renewable energy, optimizing cooling, and creating more efficient hardware.</p>
+                    <div class="text-8xl font-bold text-teal-500 my-4">2-3%</div>
+                    <p class="text-slate-600 font-semibold">of global electricity consumption comes from data centers.</p>
+                </div>
+            </section>
+
+            <!-- NEW AI FEATURES SECTION -->
+            <section class="lg:col-span-3 mt-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-600 mb-8">✨ Interactive AI Tools ✨</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- AI Feature 1: Jargon Buster -->
+                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-lg shadow-md p-6 border border-indigo-100">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-3">🤖 Cloud Jargon Buster</h3>
+                        <p class="text-slate-600 mb-4">Confused by a tech term? Ask our AI assistant to explain it simply.</p>
+                        <div class="flex gap-2 mb-4">
+                            <input type="text" id="jargonInput" placeholder="e.g., Kubernetes, Latency..." class="flex-1 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" onkeypress="handleJargonEnter(event)">
+                            <button onclick="explainJargon()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out flex items-center">
+                                <span>Explain</span>
+                                <span id="jargonSpinner" class="loader ease-linear rounded-full border-2 border-t-2 border-gray-200 h-5 w-5 ml-2 hidden"></span>
+                            </button>
+                        </div>
+                        <div id="jargonOutput" class="bg-white p-4 rounded-lg border border-slate-200 min-h-[80px] text-slate-700 italic hidden">
+                            <!-- AI Output will appear here -->
+                        </div>
+                    </div>
+
+                    <!-- AI Feature 2: Future Scenario Generator -->
+                    <div class="bg-gradient-to-br from-fuchsia-50 to-purple-50 rounded-lg shadow-md p-6 border border-purple-100">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">🚀 2035 Future Scenario Generator</h3>
+                        <p class="text-slate-600 mb-4">Select a trend to see a vivid AI-generated "Day in the Life" from the future.</p>
+                        <div class="flex gap-2 mb-4">
+                            <select id="trendSelect" class="flex-1 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none bg-white">
+                                <option value="Serverless Computing">Serverless Computing</option>
+                                <option value="Edge Computing">Edge Computing</option>
+                                <option value="AI-Powered Cloud">AI-Powered Cloud</option>
+                                <option value="Green Cloud">Green Cloud</option>
+                            </select>
+                            <button onclick="generateScenario()" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out flex items-center">
+                                <span>Envision</span>
+                                <span id="scenarioSpinner" class="loader ease-linear rounded-full border-2 border-t-2 border-gray-200 h-5 w-5 ml-2 hidden"></span>
+                            </button>
+                        </div>
+                         <div id="scenarioOutput" class="bg-white p-4 rounded-lg border border-slate-200 min-h-[80px] text-slate-700 hidden">
+                            <!-- AI Output will appear here -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-10 pt-6 border-t border-slate-300">
+            <p class="text-slate-600">TechMission 2025 | Team: Kavya Patel, Shlok Patel, & Mehzabeen Pathan</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- GEMINI API INTEGRATION ---
+        const apiKey = ""; // Canvas will inject the key at runtime.
+
+        async function callGemini(prompt) {
+            try {
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: prompt }] }]
+                        })
+                    }
+                );
+                if (!response.ok) {
+                    if (response.status === 403) {
+                         throw new Error("API Key Invalid or Missing. Please check your setup.");
+                    }
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                return "Unable to connect to AI service. " + error.message;
+            }
+        }
+
+        async function explainJargon() {
+            const term = document.getElementById('jargonInput').value.trim();
+            if (!term) return;
+
+            const outputDiv = document.getElementById('jargonOutput');
+            const spinner = document.getElementById('jargonSpinner');
+            
+            outputDiv.classList.remove('hidden');
+            outputDiv.textContent = "Thinking...";
+            spinner.classList.remove('hidden');
+
+            const prompt = `You are a friendly tech tutor for university students. Explain the cloud computing term '${term}' in one simple, easy-to-understand sentence. Avoid overly technical jargon in the explanation itself.`;
+            const response = await callGemini(prompt);
+
+            outputDiv.textContent = response;
+            spinner.classList.add('hidden');
+        }
+
+        function handleJargonEnter(event) {
+            if (event.key === 'Enter') {
+                explainJargon();
+            }
+        }
+
+        async function generateScenario() {
+            const trend = document.getElementById('trendSelect').value;
+            const outputDiv = document.getElementById('scenarioOutput');
+            const spinner = document.getElementById('scenarioSpinner');
+
+            outputDiv.classList.remove('hidden');
+            outputDiv.textContent = "Looking into the future...";
+            spinner.classList.remove('hidden');
+
+            const prompt = `You are a futurist. Create a short, vivid, and exciting 3-sentence scenario describing a typical "Day in the Life" in the year 2035 that specifically demonstrates the advanced impact of '${trend}'. Make it realistic but inspiring.`;
+            const response = await callGemini(prompt);
+
+            outputDiv.textContent = response;
+            spinner.classList.add('hidden');
+        }
+
+
+        // --- EXISTING CHART JS CODE ---
+        window.addEventListener('DOMContentLoaded', () => {
+            
+            const primaryColor = '#2563eb';
+            const secondaryColor = '#0ea5e9';
+            const tertiaryColor = '#2dd4bf';
+            const gridColor = '#e2e8f0';
+            const textColor = '#334155';
+
+            function wrapLabels(label) {
+                if (typeof label === 'string' && label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    for (const word of words) {
+                        if ((currentLine + ' ' + word).trim().length > 16) {
+                            lines.push(currentLine.trim());
+                            currentLine = word;
+                        } else {
+                            currentLine = (currentLine + ' ' + word).trim();
+                        }
+                    }
+                    if (currentLine) {
+                        lines.push(currentLine.trim());
+                    }
+                    return lines;
+                }
+                return label;
+            }
+
+            const tooltipCallbacks = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            color: textColor
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: { color: gridColor },
+                        ticks: { color: textColor }
+                    },
+                    x: {
+                        grid: { color: gridColor },
+                        ticks: { color: textColor }
+                    }
+                }
+            };
+
+            const marketGrowthCtx = document.getElementById('marketGrowthChart').getContext('2d');
+            new Chart(marketGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2022', '2023', '2024', '2025', '2026', '2027', '2028'],
+                    datasets: [{
+                        label: 'Market Size (USD Billions)',
+                        data: [500, 600, 720, 860, 1020, 1200, 1400],
+                        borderColor: primaryColor,
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        fill: true,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    ...tooltipCallbacks
+                }
+            });
+
+            const serviceModelCtx = document.getElementById('serviceModelChart').getContext('2d');
+            new Chart(serviceModelCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['SaaS (Software)', 'PaaS (Platform)', 'IaaS (Infrastructure)'],
+                    datasets: [{
+                        label: 'Market Share',
+                        data: [45, 30, 25],
+                        backgroundColor: [primaryColor, secondaryColor, tertiaryColor],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: tooltipCallbacks.plugins
+                }
+            });
+
+            const serverlessGrowthCtx = document.getElementById('serverlessGrowthChart').getContext('2d');
+            new Chart(serverlessGrowthCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2022', '2028 Forecast'],
+                    datasets: [{
+                        label: 'Market Size (USD Billions)',
+                        data: [22, 78],
+                        backgroundColor: [primaryColor, tertiaryColor],
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    ...tooltipCallbacks
+                }
+            });
+
+            const latencyCtx = document.getElementById('latencyChart').getContext('2d');
+            new Chart(latencyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Local Edge Computing', 'Central Cloud'].map(wrapLabels),
+                    datasets: [{
+                        label: 'Average Latency (ms)',
+                        data: [15, 120],
+                        backgroundColor: [secondaryColor, primaryColor],
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    ...tooltipCallbacks
+                }
+            });
+
+            const aiMarketCtx = document.getElementById('aiMarketChart').getContext('2d');
+            new Chart(aiMarketCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2023', '2030 Forecast'],
+                    datasets: [{
+                        label: 'Market Size (USD Billions)',
+                        data: [100, 1500],
+                        backgroundColor: [primaryColor, secondaryColor],
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    ...tooltipCallbacks
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
